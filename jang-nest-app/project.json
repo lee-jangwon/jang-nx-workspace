@@ -1,0 +1,26 @@
+{
+  "name": "jang-nest-app",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "jang-nest-app/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "jang-nest-app:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "jang-nest-app:build:development"
+        },
+        "production": {
+          "buildTarget": "jang-nest-app:build:production"
+        }
+      }
+    }
+  }
+}
